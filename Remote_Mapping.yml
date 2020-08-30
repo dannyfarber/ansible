@@ -36,5 +36,6 @@
       # vm_shell: 'c:\windows\system32\windowspowershell\v1.0\powershell.exe'
       # vm_shell_args: '-command "(New-SmbMapping -LocalPath I -RemotePath \\dc02\install)"'	
       vm_shell_cwd: 'c:\'
-      wait_for_process: true	
-     delegate_to: localhost
+      wait_for_process: true
+     ignore_errors: yes
+     # delegate_to: localhost
