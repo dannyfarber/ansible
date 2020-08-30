@@ -31,7 +31,14 @@
       vm_id: "{{ vm_name }}"
       vm_username: "{{ v_username }}"
       vm_password: "{{ v_password }}"
-      vm_shell: 'c:\windows\system32\net.exe use '
-      vm_shell_args: 's: \\dc02\install /user:dannyf Manager11!'	
-      vm_shell_cwd: 'c:\'
+      tasks: 	
+       - name: Map Remote Folder
+         win_mapped_drive:
+           letter: M
+           path: \\dc02\install
+           username: dannyf
+           password: Manager11!
+      # vm_shell: 'c:\windows\system32\net.exe use '
+      # vm_shell_args: 's: \\dc02\install /user:dannyf Manager11!'	
+      # vm_shell_cwd: 'c:\'
      delegate_to: localhost
