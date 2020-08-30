@@ -22,6 +22,7 @@
       datacenter: "{{ datacenter_name }}" 
       cluster: "{{ cluster_name }}"
       name: "{{ vm_name }}"
+      state: poweredon
       template: Win10-template
       folder: danny
       networks:
