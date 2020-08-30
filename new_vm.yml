@@ -28,9 +28,9 @@
       folder: danny
       networks:
       - name: vcf-vlan999-mgmt
-        ip: 192.168.10.225
-        netmask: 255.255.255.0
-        gateway: 192.168.10.254
+        # ip: 192.168.10.225
+        # netmask: 255.255.255.0
+        # gateway: 192.168.10.254
         # mac: aa:bb:dd:aa:00:14
         domain: lab.hpe.local
         dns_servers:
