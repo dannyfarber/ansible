@@ -24,14 +24,14 @@
       name: "{{ vm_name }}"
       state: poweredon
       wait_for_ip_address: yes
+      wait_for_customization: yes
       template: Win10-template
       folder: danny
       networks:
       - name: vcf-vlan999-mgmt
-        # ip: 192.168.10.225
-        # netmask: 255.255.255.0
-        # gateway: 192.168.10.254
-        # mac: aa:bb:dd:aa:00:14
+        ip: 192.168.10.225
+        netmask: 255.255.255.0
+        gateway: 192.168.10.254
         domain: lab.hpe.local
         dns_servers:
         - 192.168.10.1
