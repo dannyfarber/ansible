@@ -1,0 +1,24 @@
+---
+- name: Convert to Template
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    vcenter_hostname: vcfvcsa.lab.hpe.local
+    vcenter_username: administrator@vsphere.local
+    vcenter_password: M@n@g3r11!@#
+    datacenter_name: vcf-datacenter
+    cluster_name: vcf-cluster
+    folder_name: danny	
+  tasks:
+   - name: PowerOff the VM
+     vmware_guest_tools_wait:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      name: "{{ vm_name }}"
+      folder: "{{ folder_name }}"
+      state: poweredoff
+      is_template: yes
+     delegate_to: localhost
