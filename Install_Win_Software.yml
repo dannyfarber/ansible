@@ -1,0 +1,37 @@
+---
+- name: Install Software
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    vcenter_hostname: vcfvcsa.lab.hpe.local
+    vcenter_username: administrator@vsphere.local
+    vcenter_password: M@n@g3r11!@#
+    datacenter_name: vcf-datacenter
+    cluster_name: vcf-cluster
+    folder_name: danny	
+  tasks:
+   - name: Wait for VMware tools to become available
+     vmware_guest_tools_wait:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      name: "{{ vm_name }}"
+      folder: "{{ folder_name }}"
+
+   - name: Install Windows Software
+      vmware_vm_shell:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        validate_certs: False
+        datacenter: "{{ vcenter_datacenter }}"
+        folder: "{{ folder_name }}"
+        vm_id: "{{ vm_name }}"
+        vm_username: "{{ v_username }}"
+        vm_password: "{{ v_password }}"
+        vm_shell: "{{ v_shell }}"
+        vm_shell_args: "{{ v_shell_args }}"
+        vm_shell_cwd: "{{ v_shell_cwd }}"
+    delegate_to: localhost
