@@ -20,5 +20,20 @@
       name: "{{ vm_name }}"
       folder: "{{ folder_name }}"
       state: shutdownguest
+      state_change_timeout: 200
+     delegate_to: localhost
+
+   - name: Convert the VM to Template
+     vmware_guest:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      name: "{{ vm_name }}"
+      folder: "{{ folder_name }}"
       is_template: yes
      delegate_to: localhost
+
+
+ 
+
