@@ -19,7 +19,8 @@
       validate_certs: False
       name: "{{ vm_name }}"
       folder: "{{ folder_name }}"
-
+    
+   - name: Install Software
      vmware_vm_shell:
       hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_username }}"
@@ -33,4 +34,4 @@
       vm_shell: "{{ v_shell }}"
       vm_shell_args: "{{ v_shell_args }}"
       vm_shell_cwd: "{{ v_shell_cwd }}"
-    delegate_to: localhost
+     delegate_to: localhost
