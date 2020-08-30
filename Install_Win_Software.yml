@@ -26,7 +26,7 @@
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
       validate_certs: False
-      datacenter: "{{ vcenter_datacenter }}"
+      datacenter: "{{ datacenter_name }}"
       folder: "{{ folder_name }}"
       vm_id: "{{ vm_name }}"
       vm_username: "{{ v_username }}"
