@@ -32,7 +32,7 @@
       vm_username: "{{ v_username }}"
       vm_password: "{{ v_password }}"
       vm_shell: 'c:\windows\system32\net.exe'
-      vm_shell_args: 'use i: \\dc02\install /user:dannyf Manager11!'	
+      vm_shell_args: 'use i: "\\dc02\install" /user:dannyf Manager11!'	
       # vm_shell: 'c:\windows\system32\windowspowershell\v1.0\powershell.exe'
       # vm_shell_args: '-command "(New-SmbMapping -LocalPath I -RemotePath \\dc02\install)"'	
       vm_shell_cwd: 'c:\'
