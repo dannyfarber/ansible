@@ -33,4 +33,5 @@
       vm_password: "{{ v_password }}"
       vm_shell: 'net use s: \\dc02\install '
       vm_shell_args: '/user:dannyf Manager11!'	
+      vm_shell_cwd: 'c:\'
      delegate_to: localhost
