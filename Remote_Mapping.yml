@@ -1,0 +1,35 @@
+---
+- name: Map Remote Folder
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    vcenter_hostname: vcfvcsa.lab.hpe.local
+    vcenter_username: administrator@vsphere.local
+    vcenter_password: M@n@g3r11!@#
+    datacenter_name: vcf-datacenter
+    cluster_name: vcf-cluster
+    folder_name: danny	
+  tasks:
+   - name: Wait for VMware tools to become available
+     vmware_guest_tools_wait:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      name: "{{ vm_name }}"
+      folder: "{{ folder_name }}"
+    
+   - name: Map Remote Folder
+     vmware_vm_shell:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      datacenter: "{{ datacenter_name }}"
+      folder: "{{ folder_name }}"
+      vm_id: "{{ vm_name }}"
+      vm_username: "{{ v_username }}"
+      vm_password: "{{ v_password }}"
+      vm_shell: "net use s: \\install /user:dannyf Manager11!"
+     delegate_to: localhost
