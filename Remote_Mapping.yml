@@ -22,7 +22,6 @@
     
    - name: Map Remote Folder
      ansible_shell_type: powershell
-     # vmware_vm_shell:
       hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
