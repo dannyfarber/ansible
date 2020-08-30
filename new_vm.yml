@@ -37,6 +37,7 @@
         - 192.168.10.2
       - vlan: 999
         type: dhcp
+        wait_for_ip_address: yes
       # customization:
       #  autologon: yes
       #  dns_servers:
