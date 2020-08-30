@@ -19,6 +19,6 @@
       validate_certs: False
       name: "{{ vm_name }}"
       folder: "{{ folder_name }}"
-      state: shutdown-guest
+      state: shutdownguest
       is_template: yes
      delegate_to: localhost
