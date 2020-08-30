@@ -20,18 +20,17 @@
       name: "{{ vm_name }}"
       folder: "{{ folder_name }}"
 
-   - name: Install Windows Software
-      vmware_vm_shell:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        validate_certs: False
-        datacenter: "{{ vcenter_datacenter }}"
-        folder: "{{ folder_name }}"
-        vm_id: "{{ vm_name }}"
-        vm_username: "{{ v_username }}"
-        vm_password: "{{ v_password }}"
-        vm_shell: "{{ v_shell }}"
-        vm_shell_args: "{{ v_shell_args }}"
-        vm_shell_cwd: "{{ v_shell_cwd }}"
+     vmware_vm_shell:
+      hostname: "{{ vcenter_hostname }}"
+      username: "{{ vcenter_username }}"
+      password: "{{ vcenter_password }}"
+      validate_certs: False
+      datacenter: "{{ vcenter_datacenter }}"
+      folder: "{{ folder_name }}"
+      vm_id: "{{ vm_name }}"
+      vm_username: "{{ v_username }}"
+      vm_password: "{{ v_password }}"
+      vm_shell: "{{ v_shell }}"
+      vm_shell_args: "{{ v_shell_args }}"
+      vm_shell_cwd: "{{ v_shell_cwd }}"
     delegate_to: localhost
