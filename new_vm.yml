@@ -23,6 +23,7 @@
       cluster: "{{ cluster_name }}"
       name: "{{ vm_name }}"
       state: poweredon
+      wait_for_ip_address: yes
       template: Win10-template
       folder: danny
       networks:
@@ -37,8 +38,6 @@
         - 192.168.10.2
       - vlan: 999
         type: dhcp
-      wait_for_ip_address: yes
-      wait_for_process: true
       # customization:
       #  autologon: yes
       #  dns_servers:
