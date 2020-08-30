@@ -31,5 +31,5 @@
       vm_id: "{{ vm_name }}"
       vm_username: "{{ v_username }}"
       vm_password: "{{ v_password }}"
-      vm_shell: "net use s: \\DC02\install /user:dannyf Manager11!"
+      vm_shell: 'net use s: \\dc02\install /user:dannyf Manager11!'
      delegate_to: localhost
