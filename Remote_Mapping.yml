@@ -38,4 +38,4 @@
       vm_shell_cwd: 'c:\'
       wait_for_process: true
      ignore_errors: yes
-     # delegate_to: localhost
+     delegate_to: localhost
