@@ -21,7 +21,7 @@
       validate_certs: no
       datacenter: "{{ datacenter_name }}" 
       cluster: "{{ cluster_name }}"
-      name: testvm-2
+      name: "{{ vm_name }}"
       template: Win10-template
       folder: danny
       networks:
