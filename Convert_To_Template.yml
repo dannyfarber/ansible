@@ -12,13 +12,13 @@
     folder_name: danny	
   tasks:
    - name: PowerOff the VM
-     vmware_guest_tools_wait:
+     vmware_guest:
       hostname: "{{ vcenter_hostname }}"
       username: "{{ vcenter_username }}"
       password: "{{ vcenter_password }}"
       validate_certs: False
       name: "{{ vm_name }}"
       folder: "{{ folder_name }}"
-      state: poweredoff
+      state: shutdown-guest
       is_template: yes
      delegate_to: localhost
