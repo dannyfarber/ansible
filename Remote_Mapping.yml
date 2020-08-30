@@ -31,7 +31,7 @@
       vm_id: "{{ vm_name }}"
       vm_username: "{{ v_username }}"
       vm_password: "{{ v_password }}"
-      vm_shell: 'c:\windows\system32\net.exe '
-      vm_shell_args: 'use s: \\dc02\install /user:dannyf Manager11!'	
+      vm_shell: 'c:\windows\system32\net.exe use '
+      vm_shell_args: 's: \\dc02\install /user:dannyf Manager11!'	
       vm_shell_cwd: 'c:\'
      delegate_to: localhost
