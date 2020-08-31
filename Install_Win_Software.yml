@@ -34,4 +34,5 @@
       vm_shell: "{{ v_shell }}"
       vm_shell_args: "{{ v_shell_args }}"
       vm_shell_cwd: "{{ v_shell_cwd }}"
+      wait_for_process: true
      delegate_to: localhost
